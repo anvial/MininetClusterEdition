@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Mininet Cluster Edition : Expanding Mininet on Cluster Architecture" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mininet Cluster Edition</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/anvial/MininetClusterEdition">View on GitHub</a>
+
+          <h1 id="project_title">Mininet Cluster Edition</h1>
+          <h2 id="project_tagline">Expanding Mininet on Cluster Architecture</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/anvial/MininetClusterEdition/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/anvial/MininetClusterEdition/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-mininet-cluster-edition-page" class="anchor" href="#welcome-to-mininet-cluster-edition-page"><span class="octicon octicon-link"></span></a>Welcome to Mininet Cluster Edition Page.</h3>
+
+<p>Mininet Cluster Edition is a special software that expand <a href="http://mininet.org/">Mininet</a> prototypes for computer cluster, that allow us reproduce the network with such amount of nodes that hardly was possible before. The possible size of network topology in Mininet CE depends on number of cluster nodes with Mininet instances. One cluster node could simulate more than thousand hosts, and an modern server could execute at least 15 cluster nodes: we get about 15 thousands hosts by server. In collaboration that Mininet CE is well scaled system on we could simulated really big networks.</p>
+
+<p>By the architecture, Mininet CE saves features of Mininet, so it do not become clear simulation system, it stay a net- work prototyping system. That means that we could trust the results of such simulation and there is no need to prove correctness and adequacy of built model.</p>
+
+<hr><h2>
+<a name="mininet-ce-quick-start-guide" class="anchor" href="#mininet-ce-quick-start-guide"><span class="octicon octicon-link"></span></a>Mininet CE Quick Start Guide</h2>
+
+<h1>
+<a name="creating-cluster-node-vm" class="anchor" href="#creating-cluster-node-vm"><span class="octicon octicon-link"></span></a>Creating Cluster Node VM</h1>
+
+<ul>
+<li><p>Create VM with two eth interfaces (1 - cluster data exchange, 1 - for control)</p></li>
+<li><p>Install the Ubuntu 12.04 32-bit OS using ISO file from the ubuntu site <a href="http://www.ubuntu.com/download">link</a> </p></li>
+<li><p>Change the root password to "root":</p></li>
+</ul><pre><code>        ~/$ sudo passwd root
+</code></pre>
+
+<ul>
+<li>Install the SSH:</li>
+</ul><pre><code>        ~/# apt-get install ssh
+</code></pre>
+
+<ul>
+<li>Install python Scapy Module:</li>
+</ul><pre><code>        ~/# apt-get install python-scapy
+</code></pre>
+
+<ul>
+<li>Install Mininet:</li>
+</ul><pre><code>        ~/# apt-get install mininet
+</code></pre>
+
+<ul>
+<li>Clone this VM as much as you'd like nodes in you cluster.</li>
+</ul><h1>
+<a name="working-with-vm-clones" class="anchor" href="#working-with-vm-clones"><span class="octicon octicon-link"></span></a>Working With VM Clones</h1>
+
+<p>Some times you may face with problem of naming the eth interfaces in VM clone. To solve this problem you may do the following:</p>
+
+<pre><code>    ~/# rm /etc/udev/rules.d/70-persistent-net.rules
+    ~/# reboot
+</code></pre>
+
+<h1>
+<a name="installing-mininet-ce" class="anchor" href="#installing-mininet-ce"><span class="octicon octicon-link"></span></a>Installing Mininet CE</h1>
+
+<ul>
+<li>Download the source code</li>
+</ul><pre><code>        ~/$ git clone https://github.com/anvial/MininetClusterEdition.git
+</code></pre>
+
+<ul>
+<li>Install python NetworkX Module:</li>
+</ul><pre><code>        ~/$ sudo apt-get install python-networkx
+</code></pre>
+
+<ul>
+<li>Install python Matplotlib Module:</li>
+</ul><pre><code>        ~/$ sudo apt-get install python-matplotlib
+</code></pre>
+
+<ul>
+<li>Install python Paramiko Module:</li>
+</ul><pre><code>        ~/$ sudo apt-get install python-paramiko
+</code></pre>
+
+<ul>
+<li><p>Download METIS lib <a href="http://glaros.dtc.umn.edu/gkhome/metis/metis/download">METIS page</a>.</p></li>
+<li><p>Make METIS lib using <em>README.TXT</em> and <em>INSTALL.TXT</em> that included in distribution.</p></li>
+</ul><p>After that steps you can run Mininet CE using python2.7 interpreter</p>
+
+<pre><code>        ~/$python main.py
+</code></pre>
+
+<h1>
+<a name="simple-workflow" class="anchor" href="#simple-workflow"><span class="octicon octicon-link"></span></a>Simple Workflow</h1>
+
+<ul>
+<li>Fill the node list file (_config/nodelist.txt_) with IP addresses of VM in cluster. Example:</li>
+</ul><pre><code>    10.20.30.1 root
+    10.20.30.2 root
+    10.20.30.3 root
+</code></pre>
+
+<ul>
+<li><p>Create (or use existing) input Mininet script with custom topology creation. The example of such script is in the standard Mininet distribution in "_custom/topo-2sw-2host.py_" </p></li>
+<li><p>Run Mininet CE console</p></li>
+</ul><pre><code>    ~/$ python main.py
+</code></pre>
+
+<ul>
+<li>Interact with Mininet cluster network. For example:</li>
+</ul><pre><code>    mininet CE&gt; help
+    mininet CE&gt; h1 ping h2
+    mininet CE&gt; h1 ifconfig
+    mininet CE&gt; hosts info
+</code></pre>
+
+<ul>
+<li>Close the Mininet CE</li>
+</ul><pre><code>    mininet CE&gt; exit
+</code></pre>
+
+<hr><h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Mininet CE? Contact <a href="mailto:vantonenko@arccn.ru">vantonenko@arccn.ru</a>.</p>
+
+<hr><h3>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h3>
+
+<p>Antonenko Vitaly</p>
+
+<p>ARCCN, Moscow</p>
+
+<p><a href="mailto:vantonenko@arccn.ru">vantonenko@arccn.ru</a>, <a href="mailto:anvial@lvk.cs.msu.su">anvial@lvk.cs.msu.su</a></p>
+
+<p><strong>Enjoy the simulation with Mininet CE!</strong></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mininet Cluster Edition maintained by <a href="https://github.com/anvial">anvial</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
