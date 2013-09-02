@@ -380,13 +380,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #mnce-screenshot-l{
   width: 300px;
-  height:200px;
+  height:155px;
   float:left;
+
 }
 
 #mnce-screenshot-r{
   width: 300px;
-  height:200px;
+  height:155px;
   float:right;
 }
 
