@@ -361,13 +361,13 @@ Full-Width Styles
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;*/
 background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #ffffff 0%, #ededff 31%, #ffd3ff 34%, #ededff 37%, #ffffff 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffffff), color-stop(31%,#ededff), color-stop(34%,#ffd3ff), color-stop(37%,#ededff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg,  #ffffff 0%,#ededff 31%,#ffd3ff 34%,#ededff 37%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(-45deg,  #ffffff 0%,#ededff 31%,#ffd3ff 34%,#ededff 37%,#ffffff 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(-45deg,  #ffffff 0%,#ededff 31%,#ffd3ff 34%,#ededff 37%,#ffffff 100%); /* IE10+ */
-background: linear-gradient(135deg,  #ffffff 0%,#ededff 31%,#ffd3ff 34%,#ededff 37%,#ffffff 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: -moz-linear-gradient(left,  #ffffff 0%, #ededff 7%, #ffd3ff 25%, #ededff 35%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(7%,#ededff), color-stop(25%,#ffd3ff), color-stop(35%,#ededff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #ffffff 0%,#ededff 7%,#ffd3ff 25%,#ededff 35%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #ffffff 0%,#ededff 7%,#ffd3ff 25%,#ededff 35%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #ffffff 0%,#ededff 7%,#ffd3ff 25%,#ededff 35%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to right,  #ffffff 0%,#ededff 7%,#ffd3ff 25%,#ededff 35%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 
 }
 
