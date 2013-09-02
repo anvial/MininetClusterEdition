@@ -379,15 +379,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #mnce-screenshot-l{
-  width: 300px;
-  height:155px;
+  width: 250px;
+  height:130px;
   float:left;
 
 }
 
 #mnce-screenshot-r{
-  width: 300px;
-  height:155px;
+  width: 250px;
+  height:130px;
   float:right;
 }
 
