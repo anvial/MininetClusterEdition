@@ -372,9 +372,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #logo {
-  width: 150px;
-  height:150px;
-  float:right;
+  width: 250px;
+  height:250px;
+  float:left;
 
 }
 
