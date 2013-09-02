@@ -360,15 +360,15 @@ Full-Width Styles
   /*background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;*/
-  background: #d6d6ff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #d6d6ff 11%, #ff99ff 34%, #d6d6ff 55%, #d6d6ff 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(11%,#d6d6ff), color-stop(34%,#ff99ff), color-stop(55%,#d6d6ff), color-stop(100%,#d6d6ff)); /*   Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #d6d6ff 11%,#ff99ff 34%,#d6d6ff 55%,#d6d6ff 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #d6d6ff 11%,#ff99ff 34%,#d6d6ff 55%,#d6d6ff 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #d6d6ff 11%,#ff99ff 34%,#d6d6ff 55%,#d6d6ff 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #d6d6ff 11%,#ff99ff 34%,#d6d6ff 55%,#d6d6ff 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6ff', endColorstr='#d6d6ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #ffffff 0%, #d6d6ff 31%, #ff99ff 34%, #d6d6ff 37%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffffff), color-stop(31%,#d6d6ff), color-stop(34%,#ff99ff), color-stop(37%,#d6d6ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #ffffff 0%,#d6d6ff 31%,#ff99ff 34%,#d6d6ff 37%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #ffffff 0%,#d6d6ff 31%,#ff99ff 34%,#d6d6ff 37%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #ffffff 0%,#d6d6ff 31%,#ff99ff 34%,#d6d6ff 37%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(135deg,  #ffffff 0%,#d6d6ff 31%,#ff99ff 34%,#d6d6ff 37%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 #logo {
