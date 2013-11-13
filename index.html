@@ -62,37 +62,78 @@ Mininet CE setup has two types of nodes: "cluster" node and "control" node. Curr
 <a name="creating-cluster-node-vm" class="anchor" href="#creating-cluster-node-vm"><span class="octicon octicon-link"></span></a>Creating Cluster Node VM</h1>
 
 <ul>
-<li><p>Create VM with two eth interfaces (1 - cluster data exchange, 1 - for control)</p></li>
-<li><p>Install the Ubuntu 12.04 32-bit OS using ISO file from the ubuntu site <a href="http://www.ubuntu.com/download">link</a> </p></li>
-<li><p>Change the root password to "root":</p></li>
-</ul><pre><code>        ~/$ sudo passwd root
+<li>Create VM with 1 CPU core, 1Gb of RAM, 6.2 Gb disk space and two NICs (eth0 - for control, eth1 - for cluster data exchange). Set 1st NIC initially as NAT, 2nd as "Internal network" and allow "Promicious Mode: Allow All"</li>
+<li>Install the Ubuntu 13.10 64-bit OS using ISO file from the <a href="http://www.ubuntu.com/download">ubuntu site</a></li>
+<li>Change the root password to "root":</li>
+</ul><pre><code>$sudo passwd root
+</code></pre>
+
+<ul><li>Make a directory for storing cluster node startup scripts:</li>
+</ul><pre><code>$mkdir -p /home/clusternode/MininetScripts
+</code></pre>
+
+<ul><li>Poweroff created VM and clone it. Thus making a backup copy in case you decide to redo software installation</li></ul>
+
+<ul>
+<li>Boot clone and install necessary software:</li>
+</ul><pre><code>#apt-get install python-scapy mininet
 </code></pre>
 
 <ul>
-<li>Install the SSH:</li>
-</ul><pre><code>        ~/# apt-get install ssh
-</code></pre>
-
-<ul>
-<li>Install python Scapy Module:</li>
-</ul><pre><code>        ~/# apt-get install python-scapy
+<li>Also one can install debug and development software of choice, f.e.:</li>
+</ul><pre><code>#apt-get install vim mc strace tcpdump netcat nmap
 </code></pre>
 
 <ul>
 <li>Install Mininet:</li>
-</ul><pre><code>        ~/# apt-get install mininet
+</ul><pre><code>#apt-get install mininet
 </code></pre>
 
 <ul>
-<li>Clone this VM as many times as you need nodes in your cluster.</li>
+<li>Poweroff machine and clone this VM as many times as you need nodes in your cluster. Reconfigure eth0 on each of clones as "bridged adapter, virbr0" </li>
 </ul><h1>
 <a name="working-with-vm-clones" class="anchor" href="#working-with-vm-clones"><span class="octicon octicon-link"></span></a>Working With VM Clones</h1>
 
-<p>Some times you may face with problem of naming the eth interfaces in VM clone. To solve this problem you may do the following:</p>
+<p>Boot each of cluster nodes and proceed with following updates</p>
 
-<pre><code>    ~/# rm /etc/udev/rules.d/70-persistent-net.rules
-    ~/# reboot
+<ul>
+<li>Update properly node name in <em>/etc/hostname</em> and <em>/etc/hosts</em>. For n001 it would look like:</li>
+</ul><pre><code>/etc/hostname:
+n001
+/etc/hosts:
+[..]
+127.0.0.1	n001
+10.0.2.101	n001 
+10.0.2.102	n002
+10.0.2.201	ccnode
+[..]
 </code></pre>
+
+<ul>
+<li>Check <em>/etc/NetworkManager/NetworkManager.conf</em> for switching off control of managed interfaces:</li>
+</ul><pre><code>/etc/NetworkManager/NetworkManager.conf
+[..]
+[ifupdown]
+managed=false
+[..]
+</code></pre>
+
+<ul>
+<li>Update network configuration <em>/etc/network/interfaces</em>:</li>
+</ul><pre><code>/etc/network/interfaces:
+[..]
+manual eth1
+
+auto eth0
+iface eth0 inet static
+	address 10.0.2.101
+	netmask 255.255.255.0
+[..]
+</code></pre>
+
+<ul>
+<li>In case you generate clusternodes after control node don't forget to place ssh keys properly. Described below.</li>
+</ul>
 
 <h1>
 <a name="creating-mininet-ce-control-node" class="anchor" href="#creating-mininet-ce-control-node"><span class="octicon octicon-link"></span></a>Creating Mininet CE control node</h1>
