@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Network Prototyping System (NPS)" />
+    <meta name="description" content="Network Prototyping Simulator (NPS)" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -15,7 +15,7 @@
 		<img src="images/screenshots/screenshot-2.png" />
     </div>
 
-    <title>Mininet Cluster Edition</title>
+    <title>Network Prototype Simulation</title>
 
   </head>
 
@@ -26,7 +26,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/anvial/MininetClusterEdition">View on GitHub</a>
 
-          <h1 id="project_title">Mininet Cluster Edition</h1>
+          <h1 id="project_title">Network Prototype Simulation</h1>
           <h2 id="project_tagline">Expanding Mininet on Cluster Architecture</h2>
 
             <section id="downloads">
@@ -45,18 +45,18 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="welcome-to-mininet-cluster-edition-page" class="anchor" href="#welcome-to-mininet-cluster-edition-page"><span class="octicon octicon-link"></span></a>Welcome to Mininet Cluster Edition Page.</h3>
+<a name="welcome-to-mininet-cluster-edition-page" class="anchor" href="#welcome-to-mininet-cluster-edition-page"><span class="octicon octicon-link"></span></a>Welcome to Network Prototype Simulator Page.</h3>
 
-<p>Mininet Cluster Edition is a simulation system that expands <a href="http://mininet.org/">Mininet</a> network emulator to computer cluster. That allow us to reproduce the network with such an amount of nodes that hardly was possible before. The maximum size of network topology in Mininet CE depends on number of cluster nodes with Mininet instances. One cluster node can emulate more than thousand hosts, and an modern server could execute at least 15 cluster nodes packed in virtual machines. As the result, we get about 15 thousands hosts per server. The scalability of Mininet CE makes it possible to emulate really big networks.</p>
+<p>Network Prototyping Simulator is a simulation system that expands <a href="http://mininet.org/">Mininet</a> network emulator to computer cluster. That allow us to reproduce the network with such an amount of nodes that hardly was possible before. The maximum size of network topology in NPS depends on number of cluster nodes with Mininet instances. One cluster node can emulate more than thousand hosts, and an modern server could execute at least 15 cluster nodes packed in virtual machines. As the result, we get about 15 thousands hosts per server. The scalability of NPS makes it possible to emulate really big networks.</p>
 
-<p>By the architecture, Mininet CE saves features of Mininet, so it does not become a clear simulation system, it remains a network prototyping system. Means one could trust the results of such simulation and there is no need to prove correctness and adequacy of the model built.</p>
+<p>By the architecture, NPS saves features of Mininet, so it does not become a clear simulation system, it remains a network prototyping system. Means one could trust the results of such simulation and there is no need to prove correctness and adequacy of the model built.</p>
 
 <hr><h2>
-<a name="mininet-ce-quick-start-guide" class="anchor" href="#mininet-ce-quick-start-guide"><span class="octicon octicon-link"></span></a>Mininet CE Quick Start Guide</h2>
+<a name="mininet-ce-quick-start-guide" class="anchor" href="#mininet-ce-quick-start-guide"><span class="octicon octicon-link"></span></a>NPS Quick Start Guide</h2>
 
 <h1>
-<a name="mininet-ce-architecture" class="anchor" href="#mininet-ce-architecture"><span class="octicon octicon-link"></span></a>Mininet CE architecture</h1>
-Mininet CE setup has two types of nodes: "cluster" node and "control" node. Currently both are packed into virtual machines. Naturally cluster setup consists of one control node and many cluster nodes. Virtualization system used is Oracle VirtualBox.    
+<a name="mininet-ce-architecture" class="anchor" href="#mininet-ce-architecture"><span class="octicon octicon-link"></span></a>NPS architecture</h1>
+NPS setup has two types of nodes: "cluster" node and "control" node. Currently both are packed into virtual machines. Naturally cluster setup consists of one control node and many cluster nodes. Virtualization system used is Oracle VirtualBox.    
 
 <h1>
 <a name="creating-cluster-node-vm" class="anchor" href="#creating-cluster-node-vm"><span class="octicon octicon-link"></span></a>Creating Cluster Node VM</h1>
@@ -136,8 +136,8 @@ iface eth0 inet static
 </ul>
 
 <h1>
-<a name="creating-mininet-ce-control-node" class="anchor" href="#creating-mininet-ce-control-node"><span class="octicon octicon-link"></span></a>Creating Mininet CE control node</h1>
-As the basis for Mininet CE control node we used Ubuntu Desktop 13.10 distribution. You can find an installation medium on <a href="http://www.ubuntu.com">Ubuntu site</a>. For Mininet CE control node one needs amd64 architecture install CD.
+<a name="creating-mininet-ce-control-node" class="anchor" href="#creating-mininet-ce-control-node"><span class="octicon octicon-link"></span></a>Creating NPS control node</h1>
+As the basis for NPS control node we used Ubuntu Desktop 13.10 distribution. You can find an installation medium on <a href="http://www.ubuntu.com">Ubuntu site</a>. For NPS control node one needs amd64 architecture install CD.
 
 
 <ul>
@@ -186,7 +186,7 @@ managed=false
 </code></pre>
 
 <ul>
-<li>Generate ssh keys for <em>mininet</em> user on <em>ccnode</em> and place public parts to <em>.ssh/authorized_keys</em> for users <em>root</em> and <em>mininet</em> users on nodes. Mininet CE scripts need access to cluster nodes. For details f.e. see this miniarticle <a href="http://www.linuxproblem.org/art_9.html">SSH login without password</a> .</li>
+<li>Generate ssh keys for <em>mininet</em> user on <em>ccnode</em> and place public parts to <em>.ssh/authorized_keys</em> for users <em>root</em> and <em>mininet</em> users on nodes. NPS scripts need access to cluster nodes. For details f.e. see this miniarticle <a href="http://www.linuxproblem.org/art_9.html">SSH login without password</a> .</li>
 </ul>
 
 <ul>
@@ -236,7 +236,7 @@ $sudo ldconfig
 </code></pre>
 
 <ul>
-<li>Download sources of mininet CE into <em>/home/mininet/mininetCE</em> directory.</li>
+<li>Download sources of NPS into <em>/home/mininet/mininetCE</em> directory.</li>
 </ul><pre><code>
 $ cd /home/mininet/mininetCE
 $ git clone https://github.com/anvial/MininetClusterEdition.git
@@ -251,7 +251,7 @@ $ git clone https://github.com/anvial/MininetClusterEdition.git
 </code></pre>
 
 <ul>
-<li>Last step of control node creation procedure is to update Mininet CE configuration constants file <em>/home/mininet/mininetCE/MininetClusterEdition/config/config_constants.py</em></li>
+<li>Last step of control node creation procedure is to update NPS configuration constants file <em>/home/mininet/mininetCE/MininetClusterEdition/config/config_constants.py</em></li>
 </ul><pre><code>
 /home/mininet/mininetCE/MininetClusterEdition/config/config_constants.py:
 [..]
@@ -272,7 +272,7 @@ REMOTE_CONTROLLER_PORT = '10.0.2.201'
 [..]
 </code></pre>
 
-<p>After that steps You can run Mininet CE GUI using python2.7 interpreter</p>
+<p>After that steps You can run NPS GUI using python2.7 interpreter</p>
 <pre><code>
 $python ./MCEGUI.py
 </code></pre>
@@ -281,7 +281,7 @@ $python ./MCEGUI.py
 <a name="simple-workflow" class="anchor" href="#simple-workflow"><span class="octicon octicon-link"></span></a>Simple Workflow</h1>
 
 <ul>
-<li>In case of need to change the set of cluster nodes one can change <em>config/nodelist.txt</em> file according to rules mentioned in "Creating Mininet CE control node". Launch properly adjusted set of cluster node VMs.</li>
+<li>In case of need to change the set of cluster nodes one can change <em>config/nodelist.txt</em> file according to rules mentioned in "Creating NPS control node". Launch properly adjusted set of cluster node VMs.</li>
 </ul>
 
 <ul>
@@ -289,27 +289,27 @@ $python ./MCEGUI.py
 </ul>
 
 <ul>
-<li>Run Mininet CE GUI</li>
+<li>Run NPS GUI</li>
 </ul><pre><code>$ python ./MCEGUI.py
 </code></pre>
 
 <ul>
 <li>Interact with Mininet cluster network. Console window is located on lower left corner of main window For example:</li>
-</ul><pre><code>mininet CE&gt; help
-mininet CE&gt; h1 ping h2
-mininet CE&gt; h1 ifconfig
-mininet CE&gt; hosts info
+</ul><pre><code>NPS&gt; help
+NPS&gt; h1 ping h2
+NPS&gt; h1 ifconfig
+NPS&gt; hosts info
 </code></pre>
 
 <ul>
-<li>Close the Mininet CE</li>
-</ul><pre><code>mininet CE&gt; exit
+<li>Close the NPS</li>
+</ul><pre><code>NPS&gt; exit
 </code></pre>
 
 <hr><h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Mininet CE? Contact <a href="mailto:vantonenko@arccn.ru">vantonenko@arccn.ru</a>.</p>
+<p>Having trouble with NPS? Contact <a href="mailto:vantonenko@arccn.ru">vantonenko@arccn.ru</a>.</p>
 
 <hr><h3>
 <a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Authors</h3>
