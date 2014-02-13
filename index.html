@@ -90,6 +90,15 @@ NPS setup has two types of nodes: "cluster" node and "control" node. Currently b
 </code></pre>
 
 <ul>
+<li>Copy Mininet services script to Mininet folder:</li>
+</ul><pre><code>#cp path/to/NPS/config/services.py 
+&#09root@clusternodename:/usr/share/pyshared/mininet/
+</code>
+<code>#cp path/to/NPS/config/services.py 
+&#09root@clusternodename:/usr/lib/python2.7/dist-packages/mininet/
+</code></pre>
+
+<ul>
 <li>Poweroff machine and clone this VM as many times as you need nodes in your cluster. Reconfigure eth0 on each of clones as "bridged adapter, virbr0" </li>
 </ul><h1>
 <a name="working-with-vm-clones" class="anchor" href="#working-with-vm-clones"><span class="octicon octicon-link"></span></a>Working With VM Clones</h1>
