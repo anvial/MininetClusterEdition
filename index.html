@@ -202,7 +202,7 @@ managed=false
 <li>Install development soft necessary for installation of some fresh software pieces from tarballs</li>
 </ul><pre><code>
 apt-get install python-networkx python-matplotlib python-paramiko 
-apt-get cmake default-jdk git ant libgl1-mesa-dev freeglut3-dev libgstreamer0.10-dev libgstreamermm-0.10-dev libwebkitgtk-devmetis-5.1.0
+apt-get install cmake default-jdk git ant libgl1-mesa-dev freeglut3-dev libgstreamer0.10-dev libgstreamermm-0.10-dev libwebkitgtk-devmetis-5.1.0
 </code></pre>
 
 <ul>
@@ -321,6 +321,23 @@ NPS&gt; hosts info
 <p>Having trouble with NPS? Contact <a href="mailto:vantonenko@arccn.ru">vantonenko@arccn.ru</a>.</p>
 
 <hr><h3>
+<a name="useful-hints" class="anchor" href="#useful-hints"><span class="octicon octicon-link"></span></a>Useful Hints</h3>
+
+<p>If you needed to draw in NPS GUI graph size of more than 500 nodes. You need to provide some fixes in NetworkX library.</p>
+<p>In  "/usr/lib/pymodules/python2.7/networkx/drawing/layout.py", change the code in line 233</p>
+
+</ul><pre><code>A=nx.to_scipy_sparse_matrix(G,weight=weight)
+</code></pre>
+
+<p>to</p>
+
+</ul><pre><code>A=nx.to_scipy_sparse_matrix(G, weight=weight,dtype='f')
+</code></pre>
+
+<p>Source: <a href="https://groups.google.com/forum/#!msg/networkx-discuss/DvwOq62sUnk/Qt7nbNwZnEIJ">here</a>.</p>
+
+
+<hr><h3>
 <a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Authors</h3>
 
 <p>Antonenko Vitaly</p>
@@ -334,6 +351,12 @@ NPS&gt; hosts info
 <p>ARCCN, Moscow</p>
 
 <p><a href="mailto:anikolaev@arccn.ru">anikolaev@arccn.ru</a>, <a href="mailto:gentoorion@gmail.com">gentoorion@gmail.com</a></p>
+
+<hr><h3>
+<a name="special-thanks" class="anchor" href="#special-thanks"><span class="octicon octicon-link"></span></a>Special Thanks</h3>
+<p>Special Thanks go to the following for their help and support in
+the development of NPS system: </p>
+<p>LJYBowser</p>
 
 
 <p><strong>Enjoy the simulation with NPS!</strong></p>
